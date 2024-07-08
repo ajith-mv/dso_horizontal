@@ -248,6 +248,8 @@ class MaterialProductsController extends Controller
                     'housing_type'                 => $housing_type->id,
                     'housing'                      => $row['housing'] == '-' ? 'nil' : $row['housing'],
                     'department'                   => $department->id,
+                    'disposed_after'  => 
+                    $row['date_of_disposal']?? NULL,
                     'access'                       => $row['access'] ?? null,
                     'date_in'                      => strExcelDate($row['date_in']),
                     'date_of_expiry'               => strExcelDate($row['date_of_expiry']),
