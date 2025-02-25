@@ -5,7 +5,8 @@ namespace App\Providers;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Schema;
-
+use App\Interfaces\ExportRepositoryInterface;
+use App\Repositories\SearchRepositoryExport;
 class AppServiceProvider extends ServiceProvider
 {
     /**
@@ -15,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+       $this->app->bind(ExportRepositoryInterface::class, SearchRepositoryExport::class);
     }
 
     /**
